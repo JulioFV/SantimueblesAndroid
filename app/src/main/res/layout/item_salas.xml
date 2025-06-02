@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_salas_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="10dp"
+    app:cardUseCompatPadding="true">
+
+    <!-- Contenedor horizontal principal: imagen a la izquierda, texto e ícono a la derecha -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Imagen de la sala -->
+        <ImageView
+            android:id="@+id/item_sala_imagen"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/sala"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="12dp"/>
+
+        <!-- Contenedor vertical de textos -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <!-- Nombre de la sala: permitimos hasta 2 líneas -->
+            <TextView
+                android:id="@+id/item_sala_nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre muy largo de la Sala que antes no cabía"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:maxLines="2"
+                android:ellipsize="none"
+                android:layout_marginBottom="4dp"/>
+
+            <!-- Precio y cantidad, en dos columnas dentro de un LinearLayout horizontal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Precio:"
+                    android:textSize="14sp"
+                    android:textColor="#424242"/>
+
+                <TextView
+                    android:id="@+id/item_sala_precio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$0.00"
+                    android:textSize="14sp"
+                    android:textColor="#424242"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Disponible:"
+                    android:textSize="14sp"
+                    android:textColor="#424242"/>
+
+                <TextView
+                    android:id="@+id/item_sala_cantidad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textSize="14sp"
+                    android:textColor="#424242"
+                    android:gravity="end"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Ícono de carrito, alineado al centro vertical -->
+        <ImageView
+            android:id="@+id/item_sala_btncarrito"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/carrito"
+            android:layout_gravity="center_vertical"
+            android:padding="4dp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

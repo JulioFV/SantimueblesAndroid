@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.itsoeh.proyectointegrador.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu"
+        android:name="com.itsoeh.proyectointegrador.Menu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menu_to_carrito"
+            app:destination="@id/carrito" />
+        <action
+            android:id="@+id/action_menu_to_salas"
+            app:destination="@id/salas" />
+    </fragment>
+    <fragment
+        android:id="@+id/salas"
+        android:name="com.itsoeh.proyectointegrador.salas"
+        android:label="fragment_salas"
+        tools:layout="@layout/fragment_salas" />
+    <fragment
+        android:id="@+id/carrito"
+        android:name="com.itsoeh.proyectointegrador.carrito"
+        android:label="fragment_carrito"
+        tools:layout="@layout/fragment_carrito" />
+</navigation>
